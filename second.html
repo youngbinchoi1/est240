@@ -94,43 +94,15 @@
     width: 220px;
     height: 260px;
     border-radius: 12px;
-    border: 2px dashed var(--border);
-    background: var(--green-xs);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    color: var(--soft);
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: .08em;
-    text-align: center;
-    position: relative;
     overflow: hidden;
+    border: 1px solid var(--border);
   }
 
-  .portrait-frame svg {
-    opacity: 0.35;
+  .portrait-frame img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
   }
-
-  .portrait-hint {
-    font-size: 10px;
-    color: var(--soft);
-    letter-spacing: .06em;
-    text-align: center;
-  }
-
-  /* Logo in hero */
-  .personal-logo {
-    width: 64px; height: 64px;
-    border-radius: 50%;
-    border: 2px solid var(--border);
-    overflow: hidden;
-    margin: 0 auto;
-  }
-
-  .personal-logo img { width: 100%; height: 100%; object-fit: cover; }
 
   /* Bio */
   .bio {
@@ -272,17 +244,6 @@
 
   .essay-arrow svg { width: 18px; height: 18px; }
 
-  /* placeholder card for future essays */
-  .essay-card-placeholder {
-    padding: 22px 32px;
-    background: var(--green-xs);
-    border: 1px dashed var(--border);
-    border-radius: 12px;
-    font-size: 13px;
-    color: var(--soft);
-    font-style: italic;
-  }
-
   /* ─── FOOTER ─── */
   footer { background: var(--green); }
 
@@ -295,7 +256,7 @@
     padding: 40px 32px;
   }
 
-    .footer-logo-circle {
+  .footer-logo-circle {
     width: 68px; height: 68px;
     display: flex; align-items: center; justify-content: center;
     overflow: hidden;
@@ -320,8 +281,7 @@
       grid-template-columns: 1fr;
       gap: 36px;
     }
-    .portrait-wrap { flex-direction: row; align-items: flex-start; }
-    .portrait-frame { width: 120px; height: 140px; }
+    .portrait-frame { width: 100%; height: 220px; }
   }
 </style>
 </head>
@@ -347,16 +307,10 @@
   <!-- HERO: Portrait + Bio -->
   <div class="hero">
 
-    <!-- Left: portrait + logo -->
+    <!-- Left: portrait -->
     <div class="portrait-wrap">
       <div class="portrait-frame">
-        <!-- Replace this block with: <img src="your-portrait.jpg" alt="Youngbin Choi" style="width:100%;height:100%;object-fit:cover;"> -->
-        <svg width="52" height="52" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="12" cy="8" r="4" stroke="#2BAE66" stroke-width="1.5"/>
-          <path d="M4 20c0-4 3.582-7 8-7s8 3 8 7" stroke="#2BAE66" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-        <span>자화상 이미지</span>
-
+        <img src="selfp.png" alt="Youngbin Choi">
       </div>
     </div>
 
@@ -367,8 +321,7 @@
       <div class="bio-title">Department of Technology and Society · Stony Brook University</div>
 
       <p class="bio-desc">
-        Youngbin Choi is a Shophomore majoring in Technological System Management at Stony Brook University. He is studying in State University of NewYork at Asia Campus. He is taking EST EST 240 (Visual Rhetoric and Information Technology) course, and is interested in how what is seen can be used to create meaning. 
-
+        Youngbin Choi is a Sophomore majoring in Technological System Management at Stony Brook University. He is studying in State University of New York at Asia Campus. He is taking EST 240 (Visual Rhetoric and Information Technology) course, and is interested in how what is seen can be used to create meaning.
       </p>
     </div>
   </div>
@@ -389,7 +342,6 @@
       </svg>
     </div>
   </a>
-
 
 </main>
 
