@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Youngbin Choi — Personal Page</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --green:    #2BAE66;
+    --green-dk: #1e8a4f;
+    --green-lt: #d4f0e2;
+    --green-xs: #edf8f2;
+    --cream:    #FCF6F5;
+    --ink:      #141414;
+    --mid:      #4a4a4a;
+    --soft:     #888;
+    --border:   #e2ece7;
+    --nav-h:    68px;
+    --white:    #ffffff;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 17px;
+    line-height: 1.82;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: var(--nav-h);
+    background: var(--green);
+    display: grid;
+    grid-template-columns: 72px 1fr 72px;
+    align-items: center;
+    padding: 0 28px;
+    z-index: 200;
+    gap: 12px;
+  }
+
+  .logo-circle {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.6);
+    background: rgba(255,255,255,0.15);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+    text-decoration: none;
+    transition: opacity .2s;
+  }
+
+  .logo-circle:hover { opacity: 0.82; }
+  .logo-circle img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+  .logo-circle.right { margin-left: auto; }
+
+  .nav-center { text-align: center; }
+  .nav-title { font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #fff; }
+  .nav-sub { font-size: 10px; font-weight: 400; letter-spacing: .12em; color: rgba(255,255,255,0.7); margin-top: 2px; }
+
+  /* ─── MAIN LAYOUT ─── */
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: calc(var(--nav-h) + 72px) 40px 100px;
+  }
+
+  /* ─── HERO ROW ─── */
+  .hero {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 56px;
+    align-items: start;
+    margin-bottom: 80px;
+    padding-bottom: 80px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* Portrait */
+  .portrait-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .portrait-frame {
+    width: 220px;
+    height: 260px;
+    border-radius: 12px;
+    border: 2px dashed var(--border);
+    background: var(--green-xs);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: var(--soft);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .08em;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .portrait-frame svg {
+    opacity: 0.35;
+  }
+
+  .portrait-hint {
+    font-size: 10px;
+    color: var(--soft);
+    letter-spacing: .06em;
+    text-align: center;
+  }
+
+  /* Logo in hero */
+  .personal-logo {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    overflow: hidden;
+    margin: 0 auto;
+  }
+
+  .personal-logo img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* Bio */
+  .bio {
+    padding-top: 8px;
+  }
+
+  .bio-eyebrow {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .bio-eyebrow::before {
+    content: '';
+    display: block;
+    width: 20px; height: 2px;
+    background: var(--green);
+    flex-shrink: 0;
+  }
+
+  .bio-name {
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -.03em;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+
+  .bio-title {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--soft);
+    letter-spacing: .08em;
+    margin-bottom: 28px;
+  }
+
+  .bio-desc {
+    color: var(--mid);
+    font-weight: 300;
+    margin-bottom: 16px;
+    line-height: 1.82;
+  }
+
+  .bio-desc:last-of-type { margin-bottom: 0; }
+
+  /* ─── ESSAYS SECTION ─── */
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 24px;
+  }
+
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 20px; height: 2px;
+    background: var(--green);
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-size: clamp(20px, 2.8vw, 27px);
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: -.02em;
+    line-height: 1.25;
+    margin-bottom: 32px;
+  }
+
+  /* Essay card */
+  .essay-card {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 24px;
+    padding: 28px 32px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    text-decoration: none;
+    transition: box-shadow .22s, border-color .22s, transform .18s;
+    margin-bottom: 16px;
+  }
+
+  .essay-card:hover {
+    box-shadow: 0 6px 28px rgba(43,174,102,.12);
+    border-color: var(--green);
+    transform: translateY(-2px);
+  }
+
+  .essay-tag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 6px;
+  }
+
+  .essay-title {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 6px;
+    line-height: 1.35;
+  }
+
+  .essay-desc {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--soft);
+    line-height: 1.6;
+  }
+
+  .essay-arrow {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--green-lt);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    transition: background .2s;
+  }
+
+  .essay-card:hover .essay-arrow { background: var(--green); }
+  .essay-card:hover .essay-arrow svg path { stroke: #fff; }
+
+  .essay-arrow svg { width: 18px; height: 18px; }
+
+  /* placeholder card for future essays */
+  .essay-card-placeholder {
+    padding: 22px 32px;
+    background: var(--green-xs);
+    border: 1px dashed var(--border);
+    border-radius: 12px;
+    font-size: 13px;
+    color: var(--soft);
+    font-style: italic;
+  }
+
+  /* ─── FOOTER ─── */
+  footer { background: var(--green); }
+
+  .footer-simple {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 40px 32px;
+  }
+
+  .footer-logo-circle {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,.55);
+    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .footer-logo-circle img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+
+  .footer-brand-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 640px) {
+    .hero {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+    .portrait-wrap { flex-direction: row; align-items: flex-start; }
+    .portrait-frame { width: 120px; height: 140px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="youngbin_choi_personal.html" class="logo-circle">
+    <img src="Y_logo.png" alt="Youngbin Choi personal logo">
+  </a>
+  <div class="nav-center">
+    <div class="nav-title">Youngbin Choi</div>
+    <div class="nav-sub">Personal Page · EST 240</div>
+  </div>
+  <div class="logo-circle right" style="cursor:default;">
+    <img src="travel_logo.png" alt="Travel group logo">
+  </div>
+</nav>
+
+<!-- MAIN -->
+<main>
+
+  <!-- HERO: Portrait + Bio -->
+  <div class="hero">
+
+    <!-- Left: portrait + logo -->
+    <div class="portrait-wrap">
+      <div class="portrait-frame">
+        <!-- Replace this block with: <img src="your-portrait.jpg" alt="Youngbin Choi" style="width:100%;height:100%;object-fit:cover;"> -->
+        <svg width="52" height="52" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="8" r="4" stroke="#2BAE66" stroke-width="1.5"/>
+          <path d="M4 20c0-4 3.582-7 8-7s8 3 8 7" stroke="#2BAE66" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span>자화상 이미지</span>
+      </div>
+      <div class="portrait-hint">이미지를 교체하세요</div>
+      <div class="personal-logo">
+        <img src="Y_logo.png" alt="Y Choi logo">
+      </div>
+    </div>
+
+    <!-- Right: bio text -->
+    <div class="bio">
+      <div class="bio-eyebrow">Personal Introduction</div>
+      <div class="bio-name">Youngbin Choi</div>
+      <div class="bio-title">Department of Technology and Society · Stony Brook University</div>
+
+      <p class="bio-desc">
+        [여기에 자기소개 첫 번째 문단을 작성하세요. 전공, 관심사, 현재 학업에 대한 내용을 담으면 좋습니다.]
+      </p>
+      <p class="bio-desc">
+        [두 번째 문단: 개인적인 관심사, 미래 목표, 혹은 이 수업과 관련된 내용을 자유롭게 작성하세요.]
+      </p>
+    </div>
+  </div>
+
+  <!-- ESSAYS SECTION -->
+  <div class="section-label">Academic Work</div>
+  <div class="section-title">Expertise Essays</div>
+
+  <a href="youngbin_choi_expertise_page.html" class="essay-card">
+    <div>
+      <div class="essay-tag">EST 240 · Travel Group · 2026</div>
+      <div class="essay-title">Paddy Doyle Channel Analysis</div>
+      <div class="essay-desc">Denotative and Connotative Analysis of Meta's Travel YouTube Channel through Visual Rhetoric — Mise-en-Scene, Editing, and Narrative Anchoring.</div>
+    </div>
+    <div class="essay-arrow">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 12h14M13 6l6 6-6 6" stroke="#2BAE66" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </a>
+
+  <div class="essay-card-placeholder">
+    추가 에세이가 여기에 표시됩니다 — More essays will appear here as the course progresses.
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-simple">
+    <div class="footer-logo-circle">
+      <img src="Y_logo.png" alt="Youngbin Choi personal logo">
+    </div>
+    <div class="footer-brand-name">Youngbin Choi</div>
+  </div>
+</footer>
+
+</body>
+</html>
