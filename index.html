@@ -47,10 +47,7 @@
   }
 
   .logo-circle {
-    width: 44px; height: 44px;
-    border-radius: 50%;
-    border: 2px solid rgba(255,255,255,0.6);
-    background: rgba(255,255,255,0.15);
+    width: 56px; height: 56px;
     display: flex; align-items: center; justify-content: center;
     flex-shrink: 0;
     overflow: hidden;
@@ -62,8 +59,7 @@
 
   .logo-circle img {
     width: 100%; height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
+    object-fit: contain;
   }
 
   .logo-circle.right { margin-left: auto; }
@@ -267,62 +263,17 @@
     box-shadow: 0 2px 16px rgba(43,174,102,.08);
   }
 
-  .video-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 11px 18px;
-    background: var(--green-lt);
-    border-bottom: 1px solid var(--border);
-  }
-
-  .video-dot { width: 8px; height: 8px; border-radius: 50%; }
-  .video-dot:nth-child(1) { background: #e07070; }
-  .video-dot:nth-child(2) { background: #e0b870; }
-  .video-dot:nth-child(3) { background: var(--green); }
-
-  .video-label-text {
-    margin-left: 4px;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    color: var(--green-dk);
-  }
-
-  .video-placeholder {
+  .video-embed {
+    position: relative;
     width: 100%;
     aspect-ratio: 16/9;
-    background: linear-gradient(135deg, var(--green-xs) 0%, var(--green-lt) 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    color: var(--green-dk);
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: .08em;
   }
 
-  .play-btn {
-    width: 60px; height: 60px;
-    border-radius: 50%;
-    background: var(--green);
-    display: flex; align-items: center; justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 4px 20px rgba(43,174,102,.35);
-    transition: transform .2s, box-shadow .2s;
-  }
-
-  .play-btn:hover { transform: scale(1.08); box-shadow: 0 6px 28px rgba(43,174,102,.45); }
-
-  .play-btn::after {
-    content: '';
-    border-style: solid;
-    border-width: 10px 0 10px 20px;
-    border-color: transparent transparent transparent #fff;
-    margin-left: 5px;
+  .video-embed iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    display: block;
   }
 
   .video-caption {
@@ -358,6 +309,42 @@
   .bib-list a { color: var(--green); text-decoration: none; word-break: break-all; }
   .bib-list a:hover { text-decoration: underline; }
 
+  /* ─── PAGE NAV ─── */
+  .page-nav {
+    display: flex;
+    justify-content: center;
+    padding: 48px 40px 0;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .page-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 28px;
+    background: var(--green-lt);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--green-dk);
+    transition: background .2s, box-shadow .2s, transform .18s;
+  }
+
+  .page-nav-link:hover {
+    background: var(--green);
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(43,174,102,.3);
+    transform: translateY(-2px);
+  }
+
+  .page-nav-link svg { width: 18px; height: 18px; flex-shrink: 0; }
+  .page-nav-link:hover svg path { stroke: #fff; }
+
   /* ─── FOOTER ─── */
   footer {
     background: var(--green);
@@ -372,18 +359,15 @@
     padding: 40px 32px;
   }
 
-  .footer-logo-circle {
-    width: 52px; height: 52px;
-    border-radius: 50%;
-    border: 2px solid rgba(255,255,255,.55);
-    overflow: hidden;
+    .footer-logo-circle {
+    width: 68px; height: 68px;
     display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
   }
 
   .footer-logo-circle img {
     width: 100%; height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
+    object-fit: contain;
   }
 
   .footer-brand-name {
@@ -445,17 +429,18 @@
   <!-- INTRODUCTION -->
   <section class="section" id="introduction">
     <div class="video-block">
-      <div class="video-header">
-        <div class="video-dot"></div><div class="video-dot"></div><div class="video-dot"></div>
-        <span class="video-label-text">Primary Analysis Video</span>
-      </div>
-      <div class="video-placeholder">
-        <div class="play-btn"></div>
-        <span>72 Hours On Thailand's BEST ISLAND</span>
+      <div class="video-embed">
+        <iframe
+          src="https://www.youtube.com/embed/5LVcFCdkRhM"
+          title="72 Hours On Thailand's BEST ISLAND (Far Away From The Crowds) — Paddy Doyle"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
       </div>
       <div class="video-caption">
         "72 Hours On Thailand's BEST ISLAND (Far Away From The Crowds)" — Paddy Doyle.
-        <a href="https://www.youtube.com/watch?v=gZ9IsB72nVk" target="_blank">youtube.com/watch?v=gZ9IsB72nVk</a>
+        <a href="https://youtu.be/5LVcFCdkRhM" target="_blank">youtu.be/5LVcFCdkRhM</a>
       </div>
     </div>
 
@@ -487,7 +472,8 @@
     <div class="section-label">III — Narrative &amp; Anchoring</div>
     <h2>Voice, Authority, and the Media Anchor</h2>
     <p>The identity of the storyteller and the specific mode of vocal delivery serve as foundational mechanisms that establish the structural authority of a documentary text. Paddy Doyle exercises strict control over the narrative by implementing a voice-over commentary that plays above the recorded footage from an off-screen position. This particular auditory technique imbues the video with objective distance and provides a definitive framework for interpreting the visual information. Concurrently, the creator balances this detached authority by utilizing the talk to camera technique where he addresses the lens directly from a full-face position. This direct address effectively establishes his professional status and expertise while making the viewer feel like an exclusive participant in a private conversation. This dual tracking of sound and sight constructs a highly sophisticated partnership that mirrors the professional dynamics of traditional broadcast journalism.</p>
-    <p>Within this narrative framework, Doyle transcends the role of an ordinary internet traveler and functions as a meticulously coordinated media anchor. Unlike print media that relies on abstract text to imply an objective third-person viewpoint, the physical and vocal presence of this creator offers an intimate and direct engagement. He delivers his travel observations with absolute conviction, and this unwavering confidence serves as a form of social currency that grants him immediate credibility with his audience. The anchor utilizes his refined vocal delivery to fix the attention of the public onto specific thematic concerns, thereby elevating the institutional authority of his channel. This established credibility prepares the audience to accept his guidance when navigating the inherently ambiguous visual signs presented throughout the documentary.</p> by controlling the inherent polysemy of the images and fixing their final textual meaning. Visual signs such as an empty beach or a rustic, weathered bungalow possess multiple potential interpretations, and they could easily be decoded as indicators of loneliness, boredom, or physical discomfort. To prevent such negative readings, Doyle uses his editorial authority to anchor these fluid visual signifiers to positive concepts of perfect healing and natural paradise. His voice-over explicitly instructs the audience on what elements are important and what aspects should be dismissed, thereby streamlining the interpretive process. By emphasizing specific values through spoken language, he successfully manages the multi-layered meanings of the environment and tailors the narrative to fit his thematic goals.</p>
+    <p>Within this narrative framework, Doyle transcends the role of an ordinary internet traveler and functions as a meticulously coordinated media anchor. Unlike print media that relies on abstract text to imply an objective third-person viewpoint, the physical and vocal presence of this creator offers an intimate and direct engagement. He delivers his travel observations with absolute conviction, and this unwavering confidence serves as a form of social currency that grants him immediate credibility with his audience. The anchor utilizes his refined vocal delivery to fix the attention of the public onto specific thematic concerns, thereby elevating the institutional authority of his channel. This established credibility prepares the audience to accept his guidance when navigating the inherently ambiguous visual signs presented throughout the documentary.</p>
+    <p>The narrator actively guides the audience through the physical journey by controlling the inherent polysemy of the images and fixing their final textual meaning. Visual signs such as an empty beach or a rustic, weathered bungalow possess multiple potential interpretations, and they could easily be decoded as indicators of loneliness, boredom, or physical discomfort. To prevent such negative readings, Doyle uses his editorial authority to anchor these fluid visual signifiers to positive concepts of perfect healing and natural paradise. His voice-over explicitly instructs the audience on what elements are important and what aspects should be dismissed, thereby streamlining the interpretive process. By emphasizing specific values through spoken language, he successfully manages the multi-layered meanings of the environment and tailors the narrative to fit his thematic goals.</p>
     <p>To finalize this process of narrative anchoring, the production incorporates diverse graphic elements to establish an objective style of empirical rhetoric. Just as a television news anchor utilizes financial charts and digital maps to validate a report, Doyle integrates functional graphics directly into his video timeline. He introduces map graphics to visually demonstrate the remote and isolated location of the island, and he utilizes clean text overlays to specify exact prices for transportation and lodging. Furthermore, the inclusion of drone data outlining the physical terrain adds a layer of scientific validity that extends beyond mere aesthetic decoration. These empirical proofs provide substantive backing to his central assertion that Koh Wai represents the ultimate hidden sanctuary. Ultimately, these graphic strategies cooperate with the vocal commentary to transform subjective personal impressions into an authoritative and indisputable media presentation.</p>
   </section>
 
