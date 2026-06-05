@@ -108,13 +108,13 @@
   main {
     max-width: 860px;
     margin: 0 auto;
-    padding: calc(var(--nav-h) + 56px) 40px 80px;
+    padding: calc(var(--nav-h) + 36px) 40px 60px;
   }
 
   /* ─── PAPER HEADER ─── */
   .paper-header {
-    padding-bottom: 52px;
-    margin-bottom: 64px;
+    padding-bottom: 28px;
+    margin-bottom: 36px;
     border-bottom: 1px solid var(--border);
   }
 
@@ -124,7 +124,7 @@
     letter-spacing: .22em;
     text-transform: uppercase;
     color: var(--green);
-    margin-bottom: 24px;
+    margin-bottom: 14px;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -144,36 +144,7 @@
     color: var(--ink);
     line-height: 1.1;
     letter-spacing: -.03em;
-    margin-bottom: 18px;
-  }
-
-  .paper-subtitle {
-    font-size: 17px;
-    font-weight: 300;
-    font-style: italic;
-    color: var(--mid);
-    margin-bottom: 32px;
-    line-height: 1.65;
-    max-width: 560px;
-  }
-
-  .paper-byline {
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    color: var(--soft);
-    border-top: 1px solid var(--border);
-    padding-top: 22px;
-  }
-
-  .paper-byline strong { color: var(--ink); font-weight: 600; }
-
-  .paper-meta {
-    font-size: 11px;
-    color: var(--soft);
-    margin-top: 8px;
-    letter-spacing: .04em;
+    margin-bottom: 0;
   }
 
   /* ─── SECTION LABEL ─── */
@@ -186,7 +157,7 @@
     letter-spacing: .2em;
     text-transform: uppercase;
     color: var(--green);
-    margin-bottom: 14px;
+    margin-bottom: 10px;
   }
 
   .section-label::before {
@@ -199,8 +170,8 @@
 
   /* ─── SECTIONS ─── */
   .section {
-    margin-bottom: 72px;
-    padding-bottom: 72px;
+    margin-bottom: 48px;
+    padding-bottom: 48px;
     border-bottom: 1px solid var(--border);
   }
 
@@ -215,12 +186,12 @@
     color: var(--ink);
     letter-spacing: -.02em;
     line-height: 1.25;
-    margin-bottom: 26px;
+    margin-bottom: 16px;
   }
 
   p {
     color: var(--mid);
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     font-weight: 300;
     line-height: 1.82;
   }
@@ -229,66 +200,12 @@
 
   /* ─── VIDEO BLOCK ─── */
   .video-block {
-    margin: 40px 0;
+    margin: 28px 0;
     border-radius: 12px;
     overflow: hidden;
     border: 1px solid var(--border);
     background: var(--white);
     box-shadow: 0 4px 24px rgba(43,174,102,.08);
-  }
-
-  .video-placeholder {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16/9;
-    background: var(--green-xs);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    cursor: pointer;
-  }
-
-  .video-placeholder-icon {
-    width: 72px; height: 72px;
-    border-radius: 50%;
-    background: var(--green);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 8px 32px rgba(43,174,102,.35);
-    transition: transform .2s, box-shadow .2s;
-  }
-
-  .video-placeholder:hover .video-placeholder-icon {
-    transform: scale(1.08);
-    box-shadow: 0 12px 40px rgba(43,174,102,.45);
-  }
-
-  .video-placeholder-icon svg { width: 30px; height: 30px; margin-left: 4px; }
-
-  .video-placeholder-label {
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: var(--green-dk);
-  }
-
-  /* When you have an actual video embed, replace .video-placeholder with .video-embed */
-  .video-embed {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16/9;
-  }
-
-  .video-embed iframe {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    display: block;
-    border: none;
   }
 
   .video-caption {
@@ -302,8 +219,8 @@
 
   /* ─── PROMPT BOX ─── */
   .prompt-box {
-    margin: 32px 0;
-    padding: 28px 32px;
+    margin: 24px 0;
+    padding: 24px 28px;
     background: var(--white);
     border: 1px solid var(--border);
     border-left: 4px solid var(--green);
@@ -328,16 +245,39 @@
     margin: 0;
   }
 
+  /* ─── PROMPT STRUCTURE ─── */
+  .prompt-structure {
+    margin: 16px 0 20px;
+    padding: 18px 24px;
+    background: var(--green-xs);
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--green-dk);
+    line-height: 2;
+  }
+
+  .prompt-structure .line {
+    display: block;
+    padding-left: 1.4em;
+    text-indent: -1.4em;
+  }
+
+  .prompt-structure .line.indent {
+    padding-left: 2.8em;
+    text-indent: -1.4em;
+  }
+
   /* ─── HOOK / TWIST CARDS ─── */
   .two-col {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin: 32px 0;
+    gap: 16px;
+    margin: 20px 0 0;
   }
 
   .ht-card {
-    padding: 28px;
+    padding: 24px;
     background: var(--white);
     border: 1px solid var(--border);
     border-radius: 12px;
@@ -349,14 +289,14 @@
     letter-spacing: .18em;
     text-transform: uppercase;
     color: var(--green);
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
 
   .ht-card-title {
     font-size: 16px;
     font-weight: 600;
     color: var(--ink);
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     letter-spacing: -.01em;
   }
 
@@ -372,7 +312,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    margin-top: 20px;
+    margin-top: 16px;
   }
 
   .tool-tag {
@@ -395,7 +335,7 @@
     justify-content: center;
     padding: 0 40px;
     max-width: 860px;
-    margin: -32px auto 48px;
+    margin: -16px auto 48px;
   }
 
   .page-nav-link {
@@ -473,7 +413,7 @@
 
   /* ─── RESPONSIVE ─── */
   @media (max-width: 640px) {
-    main { padding: calc(var(--nav-h) + 40px) 24px 60px; }
+    main { padding: calc(var(--nav-h) + 28px) 24px 48px; }
     .two-col { grid-template-columns: 1fr; }
   }
 </style>
@@ -517,7 +457,7 @@
     <div class="section-label">AI Video</div>
     <h2>Dive Into the New World</h2>
 
-    <p>A boy is frustrated, hesitating to dive into the pool. As he dives in with bravery, the pool turns into a wonderful galaxy. </p>
+    <p>A boy is frustrated, hesitating to dive into the pool. As he dives in with bravery, the pool turns into a wonderful galaxy.</p>
 
     <div class="video-block">
       <video
@@ -537,28 +477,39 @@
     <div class="section-label">Prompt</div>
     <h2>Prompt Used for Generation</h2>
 
-    <p>Below is the prompt used to generate the video above. Prompt followed the following structure:<br>
-      [general video type instruction] +
-      (hook) [shot type] + [ main subject] + hook & twist narrative] + [angle] + [camera work] + [ lighting] + [ Transition ]<br>
-      + (twist) [shot type] + [ main subject] + hook & twist narrative] + [angle] + [camera work] + [ lighting]<br>
-It instructs the mood, shot type, and camera movements in order to bring a dramatic twist.</p>
+    <p>Below is the prompt used to generate the video above. Prompt followed the following structure:</p>
+
+    <div class="prompt-structure">
+      <span class="line">[general video type instruction]</span>
+      <span class="line">+ (hook) [shot type]</span>
+      <span class="line indent">+ [main subject]</span>
+      <span class="line indent">+ [hook &amp; twist narrative]</span>
+      <span class="line indent">+ [angle]</span>
+      <span class="line indent">+ [camera work]</span>
+      <span class="line indent">+ [lighting]</span>
+      <span class="line indent">+ [Transition]</span>
+      <span class="line">+ (twist) [shot type]</span>
+      <span class="line indent">+ [main subject]</span>
+      <span class="line indent">+ [hook &amp; twist narrative]</span>
+      <span class="line indent">+ [angle]</span>
+      <span class="line indent">+ [camera work]</span>
+      <span class="line indent">+ [lighting]</span>
+    </div>
+
+    <p>It instructs the mood, shot type, and camera movements in order to bring a dramatic twist.</p>
 
     <div class="prompt-box">
       <div class="prompt-box-label">Prompt</div>
       <p class="prompt-text">
-        "Create 6-8 second two consecutive scenes based on the following: "A top-down medium shot of a young, anxious boy with black swimming pants dives into the deep and intimidating swimming pool, with dark lighting from the surface rippling across his face. A following pan camera movement tracks his falling motion. 
-Transition: A seamless match cut as the boy falls to the water, with water splashes and bubbles transform into floating cosmic dust and stars, leading to an extreme wide shot of the same boy floating in deep outer space, surrounded by glowing galaxies and stars with a smooth panning shot that rotates 180 degrees around him, dramatic, colorful neon starlight illuminating the cosmic void.""
+        "Create 6-8 second two consecutive scenes based on the following: "A top-down medium shot of a young, anxious boy with black swimming pants dives into the deep and intimidating swimming pool, with dark lighting from the surface rippling across his face. A following pan camera movement tracks his falling motion. Transition: A seamless match cut as the boy falls to the water, with water splashes and bubbles transform into floating cosmic dust and stars, leading to an extreme wide shot of the same boy floating in deep outer space, surrounded by glowing galaxies and stars with a smooth panning shot that rotates 180 degrees around him, dramatic, colorful neon starlight illuminating the cosmic void.""
       </p>
     </div>
-
   </section>
 
   <!-- HOOK & TWIST SECTION -->
   <section class="section" id="hook-twist">
     <div class="section-label">Hook &amp; Twist</div>
     <h2>Hook과 Twist 분석</h2>
-
-    <p>영상은 시청자의 주의를 끄는 <strong>Hook</strong>과 기대를 뒤집는 <strong>Twist</strong>를 통해 서사적 긴장감을 형성합니다. 아래에서 이 영상의 두 요소를 분석합니다.</p>
 
     <div class="two-col">
       <div class="ht-card">
@@ -573,9 +524,8 @@ Transition: A seamless match cut as the boy falls to the water, with water splas
       </div>
     </div>
 
-    <p>Hook과 Twist는 단순한 영상 기법을 넘어 시청자와의 심리적 계약을 형성합니다. 이 영상이 그 계약을 어떻게 활용하는지 추가로 서술할 수 있습니다.</p>
+    <p style="margin-top:20px;">Hook과 Twist는 단순한 영상 기법을 넘어 시청자와의 심리적 계약을 형성합니다. 이 영상이 그 계약을 어떻게 활용하는지 추가로 서술할 수 있습니다.</p>
   </section>
-
 
 </main>
 
