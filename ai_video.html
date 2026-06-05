@@ -40,7 +40,7 @@
     height: var(--nav-h);
     background: var(--green);
     display: grid;
-    grid-template-columns: 72px 1fr;
+    grid-template-columns: 72px 1fr 72px;
     align-items: center;
     padding: 0 28px;
     z-index: 200;
@@ -489,6 +489,9 @@
     <div class="nav-title">Youngbin Choi</div>
     <div class="nav-sub">Personal Page · EST 240</div>
   </div>
+  <div class="logo-circle right" style="cursor:default;">
+    <img src="travel_logo.png" alt="Travel group logo">
+  </div>
 </nav>
 
 <!-- SECTION NAV -->
@@ -507,12 +510,6 @@
   <div class="paper-header">
     <div class="paper-eyebrow">EST 240 · AI Media · 2026</div>
     <div class="paper-title">AI-Generated Video</div>
-    <div class="paper-subtitle">
-      영상의 부제목 또는 한 줄 설명을 여기에 작성하세요. 어떤 주제나 메시지를 담은 영상인지 소개합니다.
-    </div>
-    <div class="paper-byline">
-      <strong>Youngbin Choi</strong>
-    </div>
   </div>
 
   <!-- VIDEO SECTION -->
@@ -522,26 +519,12 @@
 
     <p>영상에 대한 간단한 소개 문장을 여기에 작성하세요. 어떤 도구로 만들었는지, 어떤 내용인지 한두 문장으로 설명합니다.</p>
 
-    <!-- ── VIDEO PLACEHOLDER ──
-         실제 영상이 생기면 아래 .video-placeholder 블록을 지우고
-         대신 아래 주석 처리된 .video-embed 블록을 활성화하세요.
-         YouTube: src="https://www.youtube.com/embed/VIDEO_ID"
-         직접 업로드: <video src="your-video.mp4" controls style="width:100%;display:block;"></video>
-    ── -->
     <div class="video-block">
-      <div class="video-placeholder" id="video">
-        <div class="video-placeholder-icon">
-          <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-            <path d="M8 5.14v14l11-7-11-7z"/>
-          </svg>
-        </div>
-        <div class="video-placeholder-label">Upload your video here</div>
-      </div>
-      <!--
-      <div class="video-embed">
-        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
-      </div>
-      -->
+      <video
+        src="EST240_AIVIdeo.mov"
+        controls
+        style="width:100%;display:block;"
+      ></video>
       <div class="video-caption">Fig. 1 — AI로 생성된 영상. 제작 도구: [Sora / Runway / Pika 등 기입]</div>
     </div>
 
