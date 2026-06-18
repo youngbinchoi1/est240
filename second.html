@@ -262,7 +262,11 @@
     width: 68px; height: 68px;
     display: flex; align-items: center; justify-content: center;
     overflow: hidden;
+    text-decoration: none;
+    transition: opacity .2s;
   }
+
+  .footer-logo-circle:hover { opacity: 0.82; }
 
   .footer-logo-circle img {
     width: 100%; height: 100%;
@@ -363,9 +367,9 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-simple">
-    <div class="footer-logo-circle">
+    <a href="logo.html" class="footer-logo-circle">
       <img src="Y_logo.png" alt="Youngbin Choi personal logo">
-    </div>
+    </a>
     <div class="footer-brand-name">Youngbin Choi</div>
   </div>
 </footer>

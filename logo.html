@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The Logo — Youngbin Choi</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --green:    #2BAE66;
+    --green-dk: #1e8a4f;
+    --green-lt: #d4f0e2;
+    --green-xs: #edf8f2;
+    --cream:    #FCF6F5;
+    --ink:      #141414;
+    --mid:      #4a4a4a;
+    --soft:     #888;
+    --border:   #e2ece7;
+    --nav-h:    68px;
+    --white:    #ffffff;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 17px;
+    line-height: 1.82;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: var(--nav-h);
+    background: var(--green);
+    display: grid;
+    grid-template-columns: 72px 1fr 72px;
+    align-items: center;
+    padding: 0 28px;
+    z-index: 200;
+    gap: 12px;
+  }
+
+  .logo-circle {
+    width: 56px; height: 56px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+    text-decoration: none;
+    transition: opacity .2s;
+    cursor: pointer;
+    pointer-events: auto;
+  }
+
+  .logo-circle:hover { opacity: 0.82; }
+  .logo-circle img { width: 100%; height: 100%; object-fit: contain; }
+  .logo-circle.right { margin-left: auto; }
+
+  .nav-center { text-align: center; }
+  .nav-title { font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #fff; }
+  .nav-sub { font-size: 10px; font-weight: 400; letter-spacing: .12em; color: rgba(255,255,255,0.7); margin-top: 2px; }
+
+  /* ─── MAIN LAYOUT ─── */
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: calc(var(--nav-h) + 72px) 40px 100px;
+    text-align: center;
+  }
+
+  /* ─── LOGO DISPLAY ─── */
+  .logo-hero {
+    margin-bottom: 64px;
+    padding-bottom: 56px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .logo-big {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto 28px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(43,174,102,.12);
+  }
+
+  .logo-big img {
+    width: 78%;
+    height: 78%;
+    object-fit: contain;
+  }
+
+  .logo-hero-name {
+    font-size: clamp(28px, 4.5vw, 44px);
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -.03em;
+    line-height: 1.1;
+  }
+
+  .logo-hero-sub {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--soft);
+    letter-spacing: .08em;
+    margin-top: 8px;
+  }
+
+  /* ─── CONTENT SECTIONS ─── */
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 18px;
+  }
+
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 20px; height: 2px;
+    background: var(--green);
+    flex-shrink: 0;
+  }
+
+  .content-block {
+    text-align: left;
+    margin-bottom: 56px;
+  }
+
+  .content-block:last-child { margin-bottom: 0; }
+
+  .block-desc {
+    color: var(--mid);
+    font-weight: 300;
+    line-height: 1.82;
+  }
+
+  /* Prompt box */
+  .prompt-box {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--green);
+    border-radius: 12px;
+    padding: 24px 28px;
+    color: var(--mid);
+    font-weight: 300;
+    line-height: 1.8;
+    box-shadow: 0 6px 28px rgba(43,174,102,.08);
+  }
+
+  .prompt-box .prompt-tag {
+    display: block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 12px;
+  }
+
+  /* ─── FOOTER ─── */
+  footer { background: var(--green); }
+
+  .footer-simple {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 40px 32px;
+  }
+
+  .footer-logo-circle {
+    width: 68px; height: 68px;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+    text-decoration: none;
+    transition: opacity .2s;
+  }
+
+  .footer-logo-circle:hover { opacity: 0.82; }
+
+  .footer-logo-circle img {
+    width: 100%; height: 100%;
+    object-fit: contain;
+  }
+
+  .footer-brand-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 640px) {
+    .logo-big { width: 220px; height: 220px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="second.html" class="logo-circle">
+    <img src="Y_logo.png" alt="Youngbin Choi personal logo">
+  </a>
+  <div class="nav-center">
+    <div class="nav-title">Youngbin Choi</div>
+    <div class="nav-sub">Personal Page · EST 240</div>
+  </div>
+  <a href="https://youngbinchoi1.github.io/est240_travel/" class="logo-circle right">
+    <img src="travel_logo.png" alt="Travel group logo">
+  </a>
+</nav>
+
+<!-- MAIN -->
+<main>
+
+  <!-- LOGO HERO -->
+  <div class="logo-hero">
+    <div class="logo-big">
+      <img src="Y_logo.png" alt="Youngbin Choi personal logo">
+    </div>
+    <div class="logo-hero-name">The Logo</div>
+    <div class="logo-hero-sub">Personal Brand Mark · Youngbin Choi</div>
+  </div>
+
+  <!-- EXPLANATION -->
+  <div class="content-block">
+    <div class="section-label">About the Mark</div>
+    <p class="block-desc">
+      This logo directly denotes the initial of my name, Youngbin, making it special by adding a last name as a sub-text and intertwining the stem of the letter "Y". It was created in blue color, which is inspired by the blue ocean that the theme of 'travel' represents.
+  </div>
+
+  <!-- PROMPT -->
+  <div class="content-block">
+    <div class="section-label">How It Was Made</div>
+    <div class="prompt-box">
+      <span class="prompt-tag">Prompt used to create it</span>
+      A monogram logo design featuring the letters "Y", enclosed within a perfect circle. The "Y" dominates the upper portion with wide serif-style strokes, while a tall curved "C" shape flows downward and curves back up, creating a unified, interlocking glyph. The stem of the "Y" is interwined. Small lowercase text "choi" appears in refined, spaced-out serif lettering to the right of center. The circle border is a thin line that frames the composition.
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-simple">
+    <a href="logo.html" class="footer-logo-circle">
+      <img src="Y_logo.png" alt="Youngbin Choi personal logo">
+    </a>
+    <div class="footer-brand-name">Youngbin Choi</div>
+  </div>
+</footer>
+
+</body>
+</html>
